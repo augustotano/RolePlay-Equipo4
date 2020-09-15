@@ -38,5 +38,51 @@ namespace Library
                 }
             }
         }
+        
+         public void AttachObject(Element element)
+        {
+            elements.Add(element);
+        }
+
+        public void RemoveElement(Element element)
+        {
+            elements.Remove(element);
+        }
+         
+        
+        public void AddSpell(Spell spell)
+        {
+            if(this.Type.ToUpper() == "WIZARD")
+            {
+                this.bookOfSpells.Add(spell);
+            }
+            else{
+                Console.WriteLine("You're not a wizard Harry");
+            }
+        }
+                    
+            
+        public int Attack(Character attackedCharacter)
+        {
+            int totalPower = this.BasicAttack;
+
+            foreach (Element element in this.elements)
+            {
+                totalPower += element.Damage;
+            }
+            
+            return totalPower;
+        }
+
+        public void ReceiveAttack(int damage)
+        {
+            int totalDefence = this.BasicDefense;
+            foreach (Element element in this.elements)
+            {
+                totalDefence += element.Defence;
+            }
+            
+            this.health -= damage;
+        }
     }
 }
