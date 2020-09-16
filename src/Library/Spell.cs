@@ -16,5 +16,6 @@ namespace Library
             this.defense = defense;
             this.description = description;
         }
+
     }
 }
