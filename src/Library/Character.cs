@@ -11,8 +11,8 @@ namespace Library
             this.Type = type;
             this.BasicAttack = basicAttack;
             this.BasicDefense = basicDefense;
-            elements = new List<Element>();
-            bookOfSpells = new List<Spell>();
+            this.Elements = new List<Element>();
+            this.BookOfSpells = new List<Spell>();
         }
     
     
@@ -20,8 +20,8 @@ namespace Library
         public string Type {get; set;}
         public int BasicAttack {get; set;}
         public int BasicDefense {get; set;}
-        private List<Element> elements;
-        private List<Spell> bookOfSpells;
+        public List<Element> Elements {get; set;}
+        public List<Spell> BookOfSpells {get; set;}
         private int health = 100;
         public int Health
         {
@@ -47,12 +47,12 @@ namespace Library
         
          public void AttachObject(Element element)
         {
-            elements.Add(element);
+            this.Elements.Add(element);
         }
 
         public void RemoveElement(Element element)
         {
-            elements.Remove(element);
+            this.Elements.Remove(element);
         }
          
         
@@ -60,7 +60,7 @@ namespace Library
         {
             if(this.Type.ToUpper() == "WIZARD")
             {
-                this.bookOfSpells.Add(spell);
+                this.BookOfSpells.Add(spell);
             }
             else
             {
@@ -70,7 +70,7 @@ namespace Library
 
         public int UseSpell(Spell spell)
         {
-            if(this.bookOfSpells.Contains(spell))
+            if(this.BookOfSpells.Contains(spell))
             {
                 Console.WriteLine(spell.SpellDescription);
 
@@ -98,7 +98,7 @@ namespace Library
         {
             int totalPower = this.BasicAttack;
 
-            foreach (Element element in this.elements)
+            foreach (Element element in this.Elements)
             {
                 totalPower += element.Damage;
             }
@@ -109,7 +109,7 @@ namespace Library
         public void ReceiveAttack(int damage)
         {
             int totalDefence = this.BasicDefense;
-            foreach (Element element in this.elements)
+            foreach (Element element in this.Elements)
             {
                 totalDefence += element.Defence;
             }

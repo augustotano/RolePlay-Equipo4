@@ -14,7 +14,7 @@ namespace Test.Library
             Character P1 = new Character("Raziel", "WiZaRD", 0, 20);
             Spell fireball = new Spell("Fireball", 40, 0, "Lanza una bola de fuego");
             P1.AddSpell(fireball);
-            Assert.IsNotEmpty(P1.bookOfSpells);
+            Assert.IsNotEmpty(P1.BookOfSpells);
         }
 
         [Test]
@@ -23,7 +23,7 @@ namespace Test.Library
             Character P1 = new Character("Edmond", "Caballero", 40, 40);
             Spell fireball = new Spell("Fireball", 40, 0, "Lanza una bola de fuego");
             P1.AddSpell(fireball);
-            Assert.IsEmpty(P1.bookOfSpells);
+            Assert.IsEmpty(P1.BookOfSpells);
         }
         
         [Test]
