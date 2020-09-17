@@ -30,6 +30,7 @@ namespace Library
             {
                 if(value < 0)
                 {
+                    health = 0;
                     Console.WriteLine($"{this.Name} was slain.");
                 }
                 else
@@ -38,6 +39,11 @@ namespace Library
                 }
             }
         }
+        
+        public void Cure()
+        {
+            this.health = 100;
+        }   
         
          public void AttachObject(Element element)
         {
@@ -56,7 +62,8 @@ namespace Library
             {
                 this.bookOfSpells.Add(spell);
             }
-            else{
+            else
+            {
                 Console.WriteLine("You're not a wizard Harry");
             }
         }
@@ -106,8 +113,8 @@ namespace Library
             {
                 totalDefence += element.Defence;
             }
-            
-            this.health -= damage;
+            int totalDamage = damage - totalDefence;
+            this.Health -= totalDamage;
         }
     }
 }
