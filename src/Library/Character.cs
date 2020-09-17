@@ -60,9 +60,34 @@ namespace Library
                 Console.WriteLine("You're not a wizard Harry");
             }
         }
-                    
+
+        public int UseSpell(Spell spell)
+        {
+            if(this.bookOfSpells.Contains(spell))
+            {
+                Console.WriteLine(spell.SpellDescription);
+
+                if (spell.SpellAttack > 0)
+                {
+                    return spell.SpellAttack;
+                }
+                else if (spell.SpellDefense > 0)
+                {
+                    return spell.SpellDefense;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            else
+            {
+                Console.WriteLine("You do not know this spell.");
+                return 0;
+            }
+        }            
             
-        public int Attack(Character attackedCharacter)
+        public int Attack()
         {
             int totalPower = this.BasicAttack;
 
