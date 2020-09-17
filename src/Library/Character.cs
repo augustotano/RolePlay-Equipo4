@@ -63,22 +63,27 @@ namespace Library
 
         public int UseSpell(Spell spell)
         {
-            if(spell in this.bookOfSpells)
+            if(this.bookOfSpells.Contains(spell))
             {
-                Console.WriteLine(SpellDescription);
+                Console.WriteLine(spell.SpellDescription);
 
                 if (spell.SpellAttack > 0)
                 {
-                    return SpellAttack;
+                    return spell.SpellAttack;
                 }
                 else if (spell.SpellDefense > 0)
                 {
-                    return SpellDefense;
+                    return spell.SpellDefense;
                 }
                 else
                 {
                     return 0;
                 }
+            }
+            else
+            {
+                Console.WriteLine("You do not know this spell.");
+                return 0;
             }
         }            
             

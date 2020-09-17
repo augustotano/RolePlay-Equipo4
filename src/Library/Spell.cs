@@ -4,18 +4,18 @@ namespace Library
 {
     public class Spell
     {
-        private string SpellName {get;set;}
-        private int SpellAttack {get;set;}
-        private int SpellDefense {get;set;}
-        private string SpellDescription {get;set;}
-
-        public void Spell(string name, int attack, int defense, string description)
+        public Spell(string name, int attack, int defense, string spellDescription)
         {
-            this.name = name;
-            this.attack = attack;
-            this.defense = defense;
-            this.description = description;
+            this.SpellName = name;
+            this.SpellAttack = attack;
+            this.SpellDefense = defense;
+            this.SpellDescription = spellDescription;
         }
+        
+        public string SpellName {get;set;}
+        public int SpellAttack {get;set;}
+        public int SpellDefense {get;set;}
+        public string SpellDescription {get;set;}
 
     }
 }
