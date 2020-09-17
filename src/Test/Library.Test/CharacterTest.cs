@@ -60,6 +60,15 @@ namespace Test.Library
             int expected = 100;
             Assert.AreEqual(expected,elf.Health);
         }
+        
+        [Test]
+        public void HealthTest()
+        {
+            Character elf = new Character("Juan","Elf",40,50);
+            elf.ReceiveAttack(200);
+            int expected = 0;
+            Assert.AreEqual(expected,elf.Health);
+        }
     }
 
 
