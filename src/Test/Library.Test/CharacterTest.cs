@@ -42,7 +42,24 @@ namespace Test.Library
             Character P2 = new Character("Raziel", "WiZaRD", 0, 20);
             Assert.AreEqual(0, P2.UseSpell(spell1));
         }
+        [Test]
+        public void ReceiveAttackTest()
+        {
+            Character elf = new Character("Juan","Elf",30,50);
+            elf.ReceiveAttack(80);
+            int expected = 70;
+            Assert.AreEqual(expected,elf.Health);
+        }
 
+        [Test]
+        public void CureTest()
+        {
+            Character elf = new Character("Juan","Elf",40,50);
+            elf.ReceiveAttack(200);
+            elf.Cure();
+            int expected = 100;
+            Assert.AreEqual(expected,elf.Health);
+        }
     }
 
 
