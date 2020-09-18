@@ -11,8 +11,6 @@ namespace Library
 
         En el caso de querer cambiar como se representan los hechizos del juego, la clase 
         Spell es quien se debe modifiicar. Siendo esta la unica razon de cambio.
-    
-    
     */
     public class Spell
     {

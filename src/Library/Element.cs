@@ -12,8 +12,6 @@ namespace Library
 
         En el caso de querer cambiar como se representan los elementos del juego, la clase 
         Element es quien se debe modifiicar. Siendo esta la unica razon de cambio.
-
-
     */
     public class Element
     {
