@@ -20,8 +20,8 @@ namespace Test.Library
 
 
         //En el caso del test AddSpellTestNonWizard, queremos commprobar que si un personaje que 
-        //no es un mago quiere guardar en su armamento un Spell no podra. Esto en el test lo 
-        //comprobamos viendo si la lista continua vacia luego del uso del metodo.
+        //no es un mago quiere guardar en su armamento un Spell esto no sea posible. Esto se 
+        //comprueba viendo si la lista continua vacia luego del uso del metodo.
         [Test]
         public void AddSpellTestNonWizard()
         {
