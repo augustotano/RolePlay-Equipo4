@@ -12,6 +12,12 @@ namespace Program
             Element MagicScepter = new Element ("Magic Scepter", 0, 40);
             Gandalf.AddSpell(Freeze);
             Gandalf.AttachObject(MagicScepter);
+
+            Character Arthur = new Character("Arthur","King",30,20);
+            Element Sword = new Element("Magic Sword",60,40);
+            Element Shield = new Element("The Protector",50,60);
+            Arthur.AttachObject(Sword);
+            Arthur.AttachObject(Shield);
         }
     }
 }
